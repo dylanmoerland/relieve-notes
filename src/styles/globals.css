@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply max-h-screen min-h-screen overflow-hidden bg-gradient-to-b from-[#2e026d] to-[#15162c] text-slate-100;
+}
+
+.cl-rootBox {
+  @apply flex items-center;
+}

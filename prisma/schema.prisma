@@ -22,4 +22,7 @@ model Rant {
     title     String   @db.VarChar(255)
     content   String   @db.VarChar(255)
     createdAt DateTime @default(now())
+    authorId  String
+
+    @@index([authorId])
 }
