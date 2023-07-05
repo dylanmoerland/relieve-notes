@@ -17,7 +17,7 @@ const Loader = () => (
 export default function Home() {
   const ctx = api.useContext();
 
-  const { user, isLoaded } = useUser();
+  const { user, isSignedIn } = useUser();
 
   const { data, isLoading: isFetching } = api.rant.getAll.useQuery();
 
@@ -36,12 +36,12 @@ export default function Home() {
         <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
           <span className="text-[hsl(280,100%,70%)]">Relieve</span> Notes.
         </h1>
-        {!isLoaded ? (
+        {!isSignedIn ? (
           <Loader />
         ) : (
           <>
             <h1 className="text-5xl font-extrabold text-slate-100 py-4">
-              Need to vent {user?.fullName}?
+              Need to vent {user.fullName}?
             </h1>
             <div className="container flex flex-col max-w-xl justify-center overflow-auto">
               <div className="flex justify-center pt-4 hover:text-slate-400 hover:cursor-pointer">
